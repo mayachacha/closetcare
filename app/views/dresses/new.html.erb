@@ -2,11 +2,14 @@
 <div class="body">
   <div class="dress-form-group">
       <div class="click-upload">
-      <%= f.label :画像 %><br/>
-        <%= f.file_field :image, multiple: true, class:, id:"dress-image" %>
+      <%= f.label :images %><br/>
+      <%= f.file_field :images, multiple: true, class:"dress-form", id:"dress-image" %>
       </div>
-    <%= image_tag @dress.images, class: 'dress-form' if @dress.images.attached? %>
-     <%# /商品画像 %>
+    
+    <% if @dress.images.attached? %>
+      <%= image_tag @dress.images, class: 'dress-form' %>
+    <% end %>
+
      <div class="dress-form-group">
     <%= f.label :genre_id, "カテゴリー" %><br/>
     <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class: "dress-form"}) %>
