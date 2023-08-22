@@ -1,9 +1,11 @@
 .footer {
   background-color: black;
   padding: 10px 0;
+  font: 'Open Sans', sans-serif;
 }
+
 .closetcare {
   text-align: center;
   color: #fff;
-  font-size: 10px;
+  font-size: 15px;
 }

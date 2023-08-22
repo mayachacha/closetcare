@@ -1,12 +1,9 @@
 
 .header {
   background-color: white;
-  margin-bottom: 48px;
   padding: 20px 40px;
 }
-.inner {
-  
-}
+
 .nav {
   width: 100%;
   display: flex;
