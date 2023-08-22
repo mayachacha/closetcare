@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "clothes#index"
+  root to: "dresses#index"
+  resources :dresses
 end
