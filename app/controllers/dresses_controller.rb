@@ -1,5 +1,6 @@
 class DressesController < ApplicationController
   def index
+    @dresses = Dress.includes(:user).order(created_at: :desc)
   end
 
   def new
@@ -8,10 +9,10 @@ class DressesController < ApplicationController
 
   def create
     @dress = Dress.new(dress_params)
-
-    if @dress.save && @dress.image.attached?
-    redirect_to root_path
-    else      render :new, status: :unprocessable_entity
+    if @dress.save && @dress.images.attached?
+     redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
