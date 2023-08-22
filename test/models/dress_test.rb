@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ClothesControllerTest < ActionDispatch::IntegrationTest
+class DressTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

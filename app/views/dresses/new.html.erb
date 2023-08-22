@@ -1,0 +1,37 @@
+<%= form_with model: @dress, local: true do |f| %>
+<div class="body">
+  <div class="dress-form-group">
+      <div class="click-upload">
+      <%= f.label :画像 %><br/>
+        <%= f.file_field :image, multiple: true, class:, id:"dress-image" %>
+      </div>
+    <%= image_tag @dress.images, class: 'dress-form' if @dress.images.attached? %>
+     <%# /商品画像 %>
+     <div class="dress-form-group">
+    <%= f.label :genre_id, "カテゴリー" %><br/>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class: "dress-form"}) %>
+      </div>
+      <div class="dress-form-group">
+      <%= f.label :brand, "ブランド" %><br/>
+    <%= f.text_field(:brand, class: "dress-form", placeholder: "ブランド") %>
+      </div>
+      <div class="dress-form-group">
+    <%= f.label :size, "サイズ" %><br/>  
+    <%= f.collection_select(:size_id, Size.all, :id, :name, {}, {class: "dress-form"}) %>
+    </div>
+    <div class="dress-form-group">
+    <%= f.label :date, "購入日" %><br/>
+    <%= f.date_select(:date,
+      { use_month_numbers: true, start_year: 1930, end_year: Time.now.year,class: "dress-form"}, {class: "dress-form"}
+    ) %>
+    </div>
+    <div class="dress-form-group">
+    <%= f.label :price, "価格" %><br/>
+    <%= f.text_field :price, class: "dress-form", id: "item-price", placeholder: "例）3000" %>
+   </div>
+   <div class="dress-form-group">
+    <%= f.submit "収納する", class: "dress-form btn" %>
+  </div>
+  </div>
+  </div>
+<% end %>
