@@ -9,8 +9,8 @@ class Genre < ActiveHash::Base
     { id: 7, name: 'BAGS' },
     { id: 8, name: 'ACCESSORIES' },
     { id: 9, name: 'PAFUMES' },
-    { id: 10, name: 'UNDERWERE' },
-    { id: 11, name: 'その他' }
+    { id: 10, name: 'UNDERWARES' },
+    { id: 11, name: 'OTHERS' }
   ]
 
   include ActiveHash::Associations

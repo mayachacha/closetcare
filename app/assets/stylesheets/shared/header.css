@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0px, 10px;
-  font: 'Open Sans', sans-serif;
+  font-family: 'Lora', serif;
 }
 
 .logo {

@@ -1,11 +1,82 @@
-.footer {
-  background-color: black;
-  padding: 10px 0;
-  font: 'Open Sans', sans-serif;
+/* 下部広告部分 */
+
+.contents{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 50vh;
+  background-image: url('footer.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  padding: 5vh 15vw;
+  background-color: white;
+  font-family: 'Lora', serif;
+  color:white;
 }
 
-.closetcare {
+.ad-footer-title {
+  font-size:50px;
+}
+
+.ad-footer-title-sub {
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.store-btn {
+  display: inline-block;
+  width: auto;
+}
+
+.store-btn img{
+  display: inline-block;
+  height: 50px;
+  margin-top: 24px;
+  width: auto;
+}
+
+/* //下部広告部分 */
+
+.footer {
+  width: 100vw;
+  padding: 5vh 0;
+  color: black;
   text-align: center;
-  color: #fff;
-  font-size: 15px;
+  background-color: white;
+  font-family: 'Lora', serif;
+}
+
+.footer-contents {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.app-details {
+  margin: 0 4vw;
+}
+
+.footer-content-head {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-link {
+  color: black;
+  font-size: 12px;
+  line-height: 30px;
+  text-decoration: none;
+}
+
+.logo {
+  width: 30px;
+  vertical-align: bottom;
+}
+
+.footer>p {
+  font-size: 14px;
+  margin-top: 20px;
 }
