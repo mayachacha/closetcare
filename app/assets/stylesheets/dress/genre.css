@@ -1,0 +1,70 @@
+.by-category{
+  background-color: #fff4ea;
+  padding: 20px;
+  font-family: 'Lora', serif;
+  height: 65vh;
+  align-items: center;
+}
+
+.category-content-title{
+  font-size: 55px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin: 40px;
+}
+
+.scroll-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+button{
+  border: none;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+}
+
+button:hover{
+  opacity: 0.5;
+}
+
+.arrow-left {
+  margin-right: 10px;
+}
+
+.arrow-right {
+  margin-left: 10px;
+}
+
+.by-category ul {
+  display: flex;
+  align-items: center;
+  padding: 0; /* デフォルトのリストスタイルを削除 */
+  }
+
+.by-category li{
+  text-align: center;
+  margin: 0 10px; /* 画像同士の間隔を調整 */
+}
+
+img{
+  width: 300px;
+  height: 350px;
+}
+
+img:hover{
+  opacity: 0.5;
+}
+
+li a{
+  text-decoration: none;
+  font: 20px;
+  color: black;
+}
+
+li a:hover {
+opacity:0.5 ;
+}

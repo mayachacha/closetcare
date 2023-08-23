@@ -1,14 +1,8 @@
-body {
-  background: #e9e9e9;
-  color: #5e5e5e;
-  font: 'Open Sans', sans-serif;
-}
-
 .container{
-  background:#fafafa;
+  font: 'Open Sans', sans-serif;
   margin: 3em auto;
   padding: 0 30px;
-  max-width: 370px;
+  max-width: 400px;
 }
 
 h2{
@@ -26,9 +20,8 @@ h2{
 }
 
 .input-default{
-  background: #fafafa;
   border: none;
-  border-bottom: 3px solid #e9e9e9;
+  border-bottom: 2px solid #e9e9e9;
   color: #666;
   font: 'Open Sans', sans-serif;
   font-size: 1em;
@@ -53,7 +46,7 @@ h2{
 }
 
 .action-button {
-  background: #f16272;
+  background: black;
   margin: 20px 0;
   border: none;
   color: #fff;

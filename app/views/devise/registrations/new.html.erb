@@ -1,8 +1,9 @@
-<div class="contents row">
+<%= render "shared/header" %>
+
+<div class="contents-row">
   <div class="container">
-    <h2>Sign up</h2>
+    <h2>会員登録ページ</h2>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
         <%= f.label :nickname, class: "hidden-label" %>
@@ -30,3 +31,5 @@
     <% end %>
   </div>
 </div>
+
+<%= render "shared/footer" %>
