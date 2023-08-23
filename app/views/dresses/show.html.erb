@@ -1,0 +1,50 @@
+<%= render "shared/header" %>
+
+<div class="dress-show">
+  <div class="dress-box">
+    <div class="dress-img-content">
+      <%= image_tag @dress.images.first, class:"dress-box-img" %>
+    </div>
+        <%= link_to "edit", edit_dress_path(@dress.id), method: :get, class: "dress-show-btn" %>
+        <p class="or-text">or</p>
+        <%= link_to "delete", dress_path(@dress.id), data: { turbo_method: :delete }, class:"dress-show-btn" %>
+  </div>
+
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">category</th>
+          <td class="detail-value"><%= @dress.genre.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">brand</th>
+          <td class="detail-value"><%= @dress.brand %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">size</th>
+          <td class="detail-value"><%= @dress.size.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">date of purchase</th>
+          <td class="detail-value"><%= @dress.date %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">price</th>
+          <td class="detail-value">￥<%= @dress.price %></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="option">
+      <div class="favorite-btn">
+        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+        <span>お気に入り 0</span>
+      </div>
+      <div class="report-btn">
+        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
+        <span>ゴミ箱</span>
+      </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

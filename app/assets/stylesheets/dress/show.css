@@ -1,0 +1,106 @@
+/* 商品の概要 */
+
+.dress-show {
+  background-color: #f8f8f8;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+.dress-box {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 1200px;
+  padding: 10vh 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.dress-box-img {
+  height: 50vh;
+  width: 60vw;
+  min-height: 500px;
+  background-color: rgb(205, 202, 202);
+  object-fit: contain;
+}
+
+
+.dress-show-btn {
+  text-align: center;
+  font-size: 24px;
+  border-bottom: 2px solid gray;
+  font: 'Open Sans', sans-serif;
+  color: black;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  text-decoration: none;
+}
+
+.or-text {
+  font-size: 20px;
+}
+
+
+.detail-table {
+  margin-bottom: 30px;
+  width: 70%;
+  background-color: white;
+}
+
+.detail-item {
+  width: 20%;
+  border: none;
+  border-bottom: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+}
+
+.detail-value {
+  width: 60%;
+  padding: 20px;
+  border: none;
+  border-bottom: 1px solid #dedede;
+  font-size: 14px;
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.favorite-btn {
+  border-radius: 40px;
+  width: 15vw;
+  min-width: 200px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.favorite-star-icon {
+  margin-right: 5px;
+}
+
+.report-btn {
+  border-radius: 40px;
+  width: 15vw;
+  min-width: 200px;
+
+  padding: 1vh 0;
+  color: black;
+  border: 2px solid #2d2d2d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.report-flag-icon {
+  margin-right: 5px;
+}

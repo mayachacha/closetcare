@@ -17,6 +17,7 @@ body{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  text-decoration: none;
 }
 
 .list{
@@ -24,7 +25,6 @@ body{
   height: 50vh;
   padding: 1vw;
   margin: 10px;
-
 }
 
 .dress-img {
@@ -49,4 +49,13 @@ body{
 .dress-info{
   align-items: center;
   margin: 5px;
+}
+
+.no-decoration{
+  text-decoration: none;
+  font: black;
+}
+
+.dress-info:hover{
+  opacity: 0.5;
 }

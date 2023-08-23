@@ -1,4 +1,6 @@
 class DressesController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
+
   def index
     @dresses = Dress.includes(:user).order(created_at: :desc)
   end
@@ -15,6 +17,10 @@ class DressesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def show
+    @dress = Dress.find(params[:id])
+  end  
 
   private
     def dress_params
