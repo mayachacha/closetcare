@@ -1,6 +1,8 @@
+/* registrationのcssと同様 */
+
 .container{
   font: 'Open Sans', sans-serif;
-  margin: 3em auto;
+  margin: 8em auto;
   padding: 0 30px;
   max-width: 400px;
 }
@@ -8,6 +10,7 @@
 h2{
   text-align: center;
   padding: 1em 0;
+  font-size: 30px;
 }
 
 .new_user{
@@ -24,7 +27,7 @@ h2{
   border-bottom: 2px solid #e9e9e9;
   color: #666;
   font: 'Open Sans', sans-serif;
-  font-size: 1em;
+  font-size: 15px;
   height: 50px;
   transition: border-color 0.3s;
   width: 100%;
@@ -38,7 +41,6 @@ h2{
 .hidden-label {
   display: none;
 }
-
 
 .actions {
   text-align: center;
