@@ -1,5 +1,7 @@
 class DressesController < ApplicationController
   before_action :authenticate_user!, only: [:new]
+  before_action :set_dress, only: [:show, :edit]
+
 
   def index
     @dresses = Dress.includes(:user).order(created_at: :desc)
@@ -32,12 +34,33 @@ class DressesController < ApplicationController
   end
 
   def show
-    @dress = Dress.find(params[:id])
+  end
+
+  def destroy
+    dress = Dress.find(params[:id])
+    dress.destroy
+    redirect_to root_path
+  end
+
+  def edit
+  end
+
+  def update
+    dress = Dress.find(params[:id])
+    if @dress.update(dress_params)
+      redirect_to dress_path(dress.id)
+    else
+      render :edit
+    end
   end
 
   private
     def dress_params
       params.require(:dress).permit(:genre_id, :size_id, :brand, :date, :price, images: []).merge(user_id: current_user.id)
+    end
+
+    def set_dress
+      @dress = Dress.find(params[:id])
     end
     
 end
