@@ -9,10 +9,25 @@
   padding: 30px;
 }
 
+.click-upload{
+  text-align: center;
+  display: block;
+}
+
 label {
   text-align: left;
   font: 50px;
 }
+
+.dress-form-img{
+  border: none;
+  border-bottom: 1px solid gray;
+  color: #666;
+  font-size: 10px;
+  height: 50px;
+  transition: border-color 0.3s;
+  width: 55%
+  }
 
 .dress-form{
   border: none;
@@ -22,6 +37,7 @@ label {
   height: 50px;
   transition: border-color 0.3s;
   width: 55%;
+  text-align: center;
   }
 
 .dress-form:focus{

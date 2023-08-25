@@ -19,14 +19,27 @@
   align-items: center;
 }
 
-
-.dress-box-img {
+.main-img {
   height: 50vh;
   width: 60vw;
   min-height: 500px;
   background-color: rgb(205, 202, 202);
   object-fit: contain;
 }
+
+.other-images {
+  display: flex;
+}
+
+.other-image {
+  margin-right: 10px;
+}
+/* 
+.image-delete-button {
+  text-align: center;
+  border: solid 1px;
+  cursor: pointer;
+} */
 
 
 .dress-show-btn {

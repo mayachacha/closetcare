@@ -1,15 +1,12 @@
 <%= render "shared/header" %>
-<%= form_with model: @dress, local: true do |f| %>
+<%= form_with model: @dress, id: 'new_dress', local: true do |f| %>
 <div class="new-body">
-  <div class="dress-form-group">
+
       <div class="click-upload">
-      <%= f.label :images %><br/>
-      <%= f.file_field :images, multiple: true, class:"dress-form", id:"dress-image" %>
+        <%= f.label :images %><br/>
+        <div id="previews"></div>
+       <%= f.file_field :images, name: 'dress[images][]', data: {index: 0}, class: "dress-form-img", id:"dress-image" %>
       </div>
-    
-    <% if @dress.images.attached? %>
-      <%= image_tag @dress.images, class: 'dress-form' %>
-    <% end %>
 
      <div class="dress-form-group">
     <%= f.label :genre_id, "カテゴリー" %><br/>
@@ -17,7 +14,7 @@
       </div>
       <div class="dress-form-group">
       <%= f.label :brand, "ブランド" %><br/>
-    <%= f.text_field(:brand, class: "dress-form", placeholder: "ブランド") %>
+    <%= f.text_field(:brand, class: "dress-form" ) %>
       </div>
       <div class="dress-form-group">
     <%= f.label :size, "サイズ" %><br/>  
@@ -37,7 +34,7 @@
     <%= f.submit "収納する", class: "dress-form btn" %>
   </div>
   </div>
-  </div>
+</div>
 <% end %>
 
 
