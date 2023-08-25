@@ -9,7 +9,7 @@
       <%= link_to dress_path(dress.id), class: "no-decoration" do %>
       <div class="dress-img">
         <% if dress.images.attached? %>
-        <%= image_tag dress.images.first, class: "dress-img" %> 
+        <%= image_tag dress.images[0], class: "dress-img" %> 
         <% end %>
       </div>
       <div class='dress-info-group'>
