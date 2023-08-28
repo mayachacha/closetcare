@@ -2,7 +2,9 @@
 <%= render "shared/second_header" %>
 
 <div class="main">
-  <div class="all"> ALL </div>
+  <div class="all"> ALL
+  <span class ="dress-count" > <%= @dresses.count %>   items </span>
+  </div>
   <ul class="dress-lists">
     <% @dresses.each do |dress| %>
     <li class="list">

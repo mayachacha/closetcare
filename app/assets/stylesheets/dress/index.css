@@ -12,6 +12,10 @@ body{
   font-size: 50px;
 }
 
+.dress-count{
+  font-size: 35px;
+}
+
 .dress-lists{
   list-style: none;
   width: 100vw;
