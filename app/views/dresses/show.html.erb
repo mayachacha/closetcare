@@ -3,16 +3,23 @@
 
 <div class="dress-show">
   <div class="dress-box">
-    <div class="dress-img-content">
-      <%= image_tag @dress.images[0], class:"main-img" %>
-         <div class="other-images">
-         <% @dress.images[1..-1].each do |image| %>
+<div class="dress-box">
+  <div class="dress-img-content">
+    <% if @dress.images.present? %>
+      <%= image_tag @dress.images[0], class: "main-img" %>
+      <div class="other-images">
+        <% @dress.images[1..-1].each do |image| %>
           <div class="other-image">
-          <%= image_tag image %>
-         </div>
-      <%end%>
+            <%= image_tag image %>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <!-- No images available -->
+    <% end %>
   </div>
-    </div>
+</div>
+
         <%= link_to "edit", edit_dress_path(@dress.id), method: :get, class: "dress-show-btn" %>
         <p class="or-text">or</p>
         <%= link_to "delete", dress_path(@dress.id), data: { turbo_method: :delete }, class:"dress-show-btn" %>
