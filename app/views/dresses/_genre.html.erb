@@ -6,11 +6,9 @@ FIND BY CATEGORY
 <div class="scroll-wrapper">
 <button class="arrow-left hidden">←</button>
 <ul>
-  <% Genre.all.each do |genre| %>
-  <% if genre.id != 1 %>
+  <% Genre.where(ancestry: nil).each do |genre| %>
     <li class="category-list" ><%= link_to genre.name, genre_path(genre) %>
-    <%= image_tag @genre_images[genre.id] %></li>
-     <% end %>
+    <%= image_tag @genre_images[genre.name] %></li>
   <% end %>
 </ul>
  <button class="arrow-right">→</button>

@@ -9,10 +9,12 @@
        <%= f.file_field :images, name: 'dress[images][]', data: {index: 0}, class: "dress-form-img", id:"dress-image" %>
       </div>
 
-     <div class="dress-form-group">
+     <div class="dress-form-group", id="select-wrap">
     <%= f.label :genre_id, "カテゴリー" %><br/>
-    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class: "dress-form"}) %>
+    <%= f.collection_select :ancestry, @maingenres, :id, :name, {include_blank: "---"}, {id: "parent-genre", class: "dress-form" } %>
       </div>
+
+
       <div class="dress-form-group">
       <%= f.label :brand, "ブランド" %><br/>
     <%= f.text_field(:brand, class: "dress-form" ) %>

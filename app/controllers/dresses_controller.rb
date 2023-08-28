@@ -5,23 +5,33 @@ class DressesController < ApplicationController
 
   def index
     @dresses = Dress.includes(:user).order(created_at: :desc)
-    @genres = Genre.all 
+    @genres = Genre.all
+
     @genre_images = {
-      2 => "tops2.png",
-      3 => "bottoms3.png",
-      4 => "dress4.png",
-      5 => "shoes5.png",
-      6 => "outers6.png",
-      7 => "bags7.png",
-      8 => "accessories8.png",
-      9 => "pafumes9.png",
-      10 => "underwares10.png",
-      11 => "others11.png",
+      "TOPS" => "tops.png",
+      "BOTTOMS" => "bottoms.png",
+      "DRESS" => "dress.png",
+      "SHOES" => "shoes.png",
+      "OUTERS" => "outers.png",
+      "BAGS" => "bags.png",
+      "ACCESSORIES" => "accessories.png",
+      "PAFUMES" => "pafumes.png",
+      "UNDERWEARS" => "underwares.png",
+      "OTHERS" => "others.png",
     }
   end
 
   def new
     @dress = Dress.new
+    @genres = Genre.new
+    @maingenres= Genre.where(ancestry: nil)
+  end
+
+  def search
+    item = Genre.find(params[:id])
+    children_item = item.children
+    
+    render json:{ item: children_item }
   end
 
   def create
