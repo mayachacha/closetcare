@@ -8,14 +8,6 @@
   display: block;
   padding: 30px;
 }
-#select-wrap {
-  text-align: center; /* 親要素を中央寄せにする */
-}
-
-#child-select-wrap {
-  text-align: center;
-  font: 40px; 
-}
 
 .click-upload{
   text-align: center;
@@ -23,6 +15,7 @@
 }
 
 label {
+  text-align: left;
   font: 50px;
 }
 

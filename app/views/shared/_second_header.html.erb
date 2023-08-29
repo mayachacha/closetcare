@@ -2,8 +2,10 @@
 
   <div class="category-header-lists">
     <ul>
-      <% Genre.where(ancestry: nil).each do |genre| %>
+      <% Genre.all.each do |genre| %>
+      <% if genre.id != 1 %>
         <li class="category-list" ><%= link_to genre.name, genre_path(genre) %>
+        <% end %>
       <% end %>
     </ul>
   </div>
