@@ -1,25 +1,34 @@
 <%= render "shared/header" %>
+<%= render "shared/second_header" %>
 
 <div class="genre-main">
   <div class="genre-name"> <%= @genre.name %> </div>
 
-  <ul class="genre-lists">
+  <ul class="dress-lists">
     <% @dresses.each do |dress| %>
-    <li class="genre-list">
+    <li class="list">
       <%= link_to dress_path(dress.id), class: "no-decoration" do %>
       <div class="dress-img">
         <% if dress.images.attached? %>
         <%= image_tag dress.images[0], class: "dress-img" %> 
         <% end %>
       </div>
+
+    <%= link_to genre_path(dress.genre), class: "no-decoration" do %>
       <div class='dress-info-group'>
         <div class='dress-info'><%= dress.genre.name %></div>
         <div class='dress-info'><%= dress.size.name %></div>
       </div>
-      <% end %>
+    <% end %>
+    <% end %>
+
     </li>
     <% end %>
  </ul>
 </div>
+</div>
 
 <%= render "shared/footer" %>
+
+
+

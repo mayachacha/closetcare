@@ -5,6 +5,7 @@
   <div class="all"> ALL
   <span class ="dress-count" > <%= @dresses.count %>   items </span>
   </div>
+
   <ul class="dress-lists">
     <% @dresses.each do |dress| %>
     <li class="list">
@@ -13,17 +14,20 @@
         <% if dress.images.attached? %>
         <%= image_tag dress.images[0], class: "dress-img" %> 
         <% end %>
+      <% end %>
       </div>
+
+    <%= link_to genre_path(dress.genre), class: "no-decoration" do %>
       <div class='dress-info-group'>
         <div class='dress-info'><%= dress.genre.name %></div>
         <div class='dress-info'><%= dress.size.name %></div>
       </div>
     <% end %>
+  
     </li>
     <% end %>
  </ul>
  </div>
  
- <%= render "genre"%>>
-
+ <%= render "genre"%>
 <%= render "shared/footer" %>

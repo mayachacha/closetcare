@@ -1,6 +1,6 @@
 class DressesController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
-  before_action :set_dress, only: [:show, :edit]
+  before_action :authenticate_user!, only: [:index, :new, :show,:edit, :destroy]
+  before_action :set_dress, only: [:show, :edit, :update]
 
 
   def index
@@ -46,9 +46,8 @@ class DressesController < ApplicationController
   end
 
   def update
-    dress = Dress.find(params[:id])
     if @dress.update(dress_params)
-      redirect_to dress_path(dress.id)
+      redirect_to dress_path(@dress.id)
     else
       render :edit
     end

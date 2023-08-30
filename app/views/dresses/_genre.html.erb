@@ -9,8 +9,8 @@ FIND BY CATEGORY
     <% if genre.id != 1 %>
       <li class="category-list" >
       <%= link_to genre_path(genre) do %>
-        <%= genre.name %>
         <%= image_tag @genre_images[genre.id], class:"genre-imgs" %>
+        <%= genre.name %>
       </li>
       <% end %> 
     <% end %>
