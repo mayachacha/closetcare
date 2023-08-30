@@ -1,5 +1,4 @@
 .dress-show {
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,29 +7,28 @@
 
 .dress-box {
   background-color: #FFF;
-  width: 70vw;
-  min-width: 1200px;
-  padding: 10vh 15vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 70px;
 }
 
-.main-img {
-  height: 50vh;
-  width: 60vw;
-  min-height: 500px;
-  background-color: rgb(205, 202, 202);
-  object-fit: contain;
+.dress-image-content{
+  width:100%;
 }
 
-.other-images {
+.dress-show-images {
   display: flex;
+  flex-wrap: wrap; /* 画像を折り返して表示 */
+  justify-content: center; /* 画像を中央に配置 */
+  align-items: flex-start; /* 画像を上寄せに配置 */
+  margin: 20px -10px; /* 画像間の間隔を調整 */
 }
 
-.other-image {
-  margin-right: 10px;
+img.dress-show-image{
+  width: 350px;
+  height: 400px;
+  margin: 0 10px; /* 画像間の間隔を調整 */
 }
 
 /* 
@@ -66,6 +64,9 @@
   margin-bottom: 30px;
   width: 70%;
   background-color: white;
+  text-align: center;
+  margin: auto;
+
 }
 
 .detail-item {
@@ -86,9 +87,9 @@
 
 .option {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   position: relative;
-  margin
+  margin: 100px;
 }
 
 .favorite-btn {
