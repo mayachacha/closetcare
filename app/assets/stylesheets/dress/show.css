@@ -127,3 +127,8 @@ img.dress-show-image{
   width: 20px;
   height: 20px; 
 }
+
+
+.hidden_field{
+  display: none;
+}

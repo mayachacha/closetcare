@@ -42,16 +42,17 @@
       </tbody>
     </table>
     
-    <div class="option">
-      <div class="favorite-btn">
-        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
+  <div class="option">
+    <div class="mylist-button">
+      <div id="mylist-btn<%= @dress.id %>">
+          <%= render partial: "mylists/mylist", locals: { dress: @dress } %>
       </div>
-      <div class="report-btn">
-        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>ゴミ箱</span>
+    </div>
+
+    <div class="report-btn">
+      <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
+      <span>ゴミ箱</span>
       </div>
-  </div>
 </div>
 
 <%= render "shared/footer" %>
