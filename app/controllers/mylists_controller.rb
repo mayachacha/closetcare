@@ -1,26 +1,22 @@
 class MylistsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_dress, expect: [:show]
+  before_action :set_dress, only: [:create, :destroy]
 
   def create
     mylist = current_user.mylists.build(dress_id: params[:dress_id])
     mylist.save
-    respond_to do |format|
-      format.js
-    end
+    render partial: 'mylists/mylist', locals: { dress: @dress }
   end
 
   def destroy
     mylist = Mylist.find_by(dress_id: params[:dress_id], user_id: current_user.id)
     mylist.destroy
-    respond_to do |format|
-      format.js
-    end
+    render partial: 'mylists/mylist', locals: { dress: @dress }
   end
 
   def show
-    @mylists = Mylist.all 
-    @dresses = Dress.includes(:mylists).order(created_at: :desc)
+    @mylists = current_user.mylists
+    @dresses = @mylists.map(&:dress)
     @genre_images = {
       2 => "tops2.png",
       3 => "bottoms3.png",
@@ -37,7 +33,7 @@ class MylistsController < ApplicationController
 
   private
   def set_dress
-    @dress = Dress.find(params[:id])
+    @dress = Dress.find(params[:dress_id])
   end
   
 end

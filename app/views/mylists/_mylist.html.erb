@@ -1,5 +1,7 @@
-    <% if @dress.mylisted_by?(current_user) %>
-    <%= link_to "マイリスト追加", dress_mylists_path(@dress.id), data: { turbo_method: :delete }, class: "dress_mylists" , remote: true %>
+  <%= turbo_frame_tag dom_id(dress, :mylist) do %>
+    <% if user_signed_in? && @dress.mylisted_by?(current_user) %>
+    <%= link_to "マイリスト削除", dress_mylists_path(@dress.id), data: { turbo_method: :delete }, class: "dress_mylists" %>
     <% else %>
-    <%= link_to "マイリスト削除", dress_mylists_path(@dress.id), data: { turbo_method: :post }, class: "dress_mylists" , remote: true %>
+    <%= link_to "マイリスト追加", dress_mylists_path(@dress.id), data: { turbo_method: :post }, class: "dress_mylists" %>
     <% end %>
+  <% end %>

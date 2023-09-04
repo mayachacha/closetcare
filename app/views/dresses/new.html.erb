@@ -3,10 +3,14 @@
 <%= form_with model: @dress, id: 'new_dress', local: true do |f| %>
 <div class="new-body">
 
-      <div class="click-upload">
-        <%= f.label :images %><br/>
+        <div class="dress-form-group">
+        <%= f.label :images, "画像(最大3枚)" %><br/>
+        <div class="previews">
         <div id="previews"></div>
+        </div>
+        <div class="click-upload">
        <%= f.file_field :images, name: 'dress[images][]', data: {index: 0}, class: "dress-form-img", id:"dress-image" %>
+      </div>
       </div>
 
      <div class="dress-form-group">
