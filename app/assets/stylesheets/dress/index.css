@@ -26,7 +26,6 @@
 .list{
   width: 37vh;
   height: 50vh;
-  text-align;
   margin-bottom: 100px;
 }
 
@@ -44,7 +43,7 @@
 
 .dress-info-group{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -56,6 +55,8 @@
 .no-decoration{
   text-decoration: none;
   font: black;
+  display: flex;
+  
 }
 
 .dress-info:hover{

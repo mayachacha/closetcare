@@ -26,3 +26,23 @@
 ### Association
 - belongs_to :user
 - has_many :comments
+
+ここから未確認
+
+### genre テーブル
+| Column      | Type       | Options                        |
+| ----------- | ---------- | -------------------------------|
+|     | integer    | null: false                    |
+
+### Association
+-belongs_to :
+-has_many :dresses
+
+### mylist テーブル
+| Column      | Type       | Options                        |
+| ----------- | ---------- | -------------------------------|
+|     | integer    | null: false                    |
+
+### Association
+-belongs_to :user
+-belongs_to :dress
