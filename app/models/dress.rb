@@ -3,7 +3,7 @@ class Dress < ApplicationRecord
   belongs_to :genre
   belongs_to :size
   has_many_attached :images
-  has_many :mylists
+  has_many :mylists,  dependent: :destroy
   belongs_to :user
 
   validates :genre_id, numericality: { other_than: 1 , message: "can't be blank" }

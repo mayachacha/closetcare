@@ -3,11 +3,15 @@
 
 <%= form_with model: @dress, id: 'new_dress', local: true do |f| %>
 <div class="new-body">
+      <div class="dress-form-group">
 
-      <div class="click-upload">
-        <%= f.label :images %><br/>
-        <div id="previews"></div>
+        <%= f.label :images, "画像(最大3枚)" %><br/>
+         <div class="previews">
+         <div id="previews"></div>
+          </div>
+          <div class="click-upload">
        <%= f.file_field :images, name: 'dress[images][]', data: {index: 0}, class: "dress-form-img", id:"dress-image" %>
+      </div>
       </div>
 
      <div class="dress-form-group">
@@ -30,7 +34,7 @@
     </div>
     <div class="dress-form-group">
     <%= f.label :price, "価格" %><br/>
-    <%= f.text_field :price, class: "dress-form", id: "item-price", placeholder: "例）3000" %>
+    <%= f.text_field :price, class: "dress-form", id: "item-price", placeholder: "例）3000" %>円
    </div>
    <div class="dress-form-group">
     <%= f.submit "収納する", class: "dress-form btn" %>

@@ -1,10 +1,10 @@
 class DressesController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :new, :show,:edit, :destroy]
+  before_action :authenticate_user!, only: [:index, :new, :show, :edit]
   before_action :set_dress, only: [:show, :edit, :update]
 
 
   def index
-    @dresses = Dress.includes(:user).order(created_at: :desc).page(params[:page]).per(5)
+    @dresses = Dress.includes(:user).order(created_at: :desc).page(params[:page]).per(30)
     @genres = Genre.all 
     @genre_images = {
       2 => "tops-img.png",
