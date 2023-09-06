@@ -1,14 +1,14 @@
 <%= render "shared/header" %>
 <%= render "shared/second_header" %>
 
-<%= turbo_frame_tag "genre_#{params[:id]}" do %>
+<%# <%= turbo_frame_tag "genre_#{params[:id]}" do %> %>
 <div class="main">
   <div class="genre-name"> <%= @genre.name %> </div>
 
   <ul class="dress-lists">
     <% @dresses.each do |dress| %>
     <li class="list">
-      <%= link_to dress_path(dress), class: "no-decoration" do %>
+      <%= link_to dress_path(dress.id), class: "no-decoration" do %>
       <div class="dress-img">
         <% if dress.images.attached? %>
         <%= image_tag dress.images[0], class: "dress-img" %> 
@@ -32,6 +32,6 @@
     <% end %>
  </ul>
 </div>
-   <% end %>
+   <%# <% end %> %>
 
 <%= render "shared/footer" %>

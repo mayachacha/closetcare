@@ -7,16 +7,16 @@ class DressesController < ApplicationController
     @dresses = Dress.includes(:user).order(created_at: :desc)
     @genres = Genre.all 
     @genre_images = {
-      2 => "tops2.png",
-      3 => "bottoms3.png",
-      4 => "dress4.png",
-      5 => "shoes5.png",
-      6 => "outers6.png",
-      7 => "bags7.png",
-      8 => "accessories8.png",
-      9 => "pafumes9.png",
-      10 => "underwares10.png",
-      11 => "others11.png",
+      2 => "tops-img.png",
+      3 => "bottoms-img.png",
+      4 => "dresses-img.png",
+      5 => "shoes-img.png",
+      6 => "outers-img.png",
+      7 => "bags-img.png",
+      8 => "accessories-img.png",
+      9 => "pafumes-img.png",
+      10 => "underwears-img.png",
+      11 => "others-img.png",
     }
   end
 
