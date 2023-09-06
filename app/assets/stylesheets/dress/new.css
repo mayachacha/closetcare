@@ -1,6 +1,7 @@
 .new-body{
   background-color: white;
   padding-top: 50px;
+  width: 100%;
 }
 
 .dress-form-group{
@@ -30,14 +31,18 @@ label {
 
 .previews{
   display: flex;
-  margin-left: 20%;
+  margin-left: 10%;
   margin-bottom: 5%;
 }
 
 .preview-image{
   text-align: center;
   height: 400px;
-  width: 350px;
+  width: 325px;  
+}
+
+.preview{
+  margin: 20px ;
 }
 
 .dress-form{
