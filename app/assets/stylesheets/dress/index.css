@@ -69,3 +69,34 @@
 .dress-info:hover{
   opacity: 0.5;
 }
+
+/* ページネーション関連 */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  color: black;
+  font-size: 20px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.pagination-list {
+  display: flex;
+  align-items: center; /* 水平中央揃え */
+}
+
+.pagination-next {
+  text-decoration: none;
+  order: 2; /* 順序を調整 */
+  margin-left: 10px; /* "次へ" の左側の余白を調整 */
+}
+
+.pagination-previous {
+  text-decoration: none;
+}
+
+.pagination-link {
+  padding: 25px;
+}

@@ -4,7 +4,7 @@ class DressesController < ApplicationController
 
 
   def index
-    @dresses = Dress.includes(:user).order(created_at: :desc)
+    @dresses = Dress.includes(:user).order(created_at: :desc).page(params[:page]).per(5)
     @genres = Genre.all 
     @genre_images = {
       2 => "tops-img.png",

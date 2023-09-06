@@ -2,8 +2,13 @@
 <%= render "shared/second_header" %>
 
 <div class="main">
+
   <div class="all"> ALL
   <span class ="dress-count" > <%= @dresses.count %>   items </span>
+  </div>
+  
+  <div class="pagination">
+  <%= paginate @dresses %>
   </div>
 
   <ul class="dress-lists">
