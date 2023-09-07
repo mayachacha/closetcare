@@ -29,7 +29,7 @@
     <div class="dress-form-group">
     <%= f.label :date, "購入日" %><br/>
     <%= f.date_select(:date,
-      { use_month_numbers: true, start_year: 1930, end_year: Time.now.year,class: "dress-form"}, {class: "dress-form"}
+      { use_month_numbers: true, start_year: 1930, end_year: Time.now.year, class: "dress-form", prompt: { year: '年', month: '月', day: '日' }}, {class: "dress-form"}
     ) %>
     </div>
     <div class="dress-form-group">

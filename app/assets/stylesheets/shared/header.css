@@ -11,6 +11,15 @@
   font-family: 'Lora', serif;
 }
 
+.nav__right{
+  display: flex;
+  align-items: center;
+} 
+
+.nav__left{
+  height: 100%;
+}
+
 .nav__btn{
   display: inline-block;
   padding: 20px ;
@@ -23,8 +32,8 @@
 }
 
 .nav__left img{
-  width: 40%;
-  height: 65%;
+  width: 35%;
+  height: 45%;
 }
 
 .nav__right img{

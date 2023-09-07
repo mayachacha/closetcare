@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 <%= render "shared/second_header" %>
 
-<%= turbo_frame_tag "dress_#{params[:id]}" do %>
+<%# <%= turbo_frame_tag dom_id(@dress) do %>
 <div class="dress-show">
   <div class="dress-box">
     <div class="dress-img-content">
@@ -50,6 +50,6 @@
       </div>
     </div>
 </div>
-<% end %>
+<%# <% end %>
 
 <%= render "shared/footer" %>
