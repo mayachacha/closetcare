@@ -2,6 +2,25 @@ class MylistsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_dress, only: [:create, :destroy]
 
+  def index
+    # 現在のユーザーのマイリストのdressのidを取得
+    mylists = Mylist.where(user_id: current_user).pluck(:dress_id) 
+    @mylists = Mylist.where(dress_id: mylists).order(created_at: :desc).page(params[:page]).per(30)
+    @genres = Genre.all 
+    @genre_images = {
+      2 => "tops-img.png",
+      3 => "bottoms-img.png",
+      4 => "dresses-img.png",
+      5 => "shoes-img.png",
+      6 => "outers-img.png",
+      7 => "bags-img.png",
+      8 => "accessories-img.png",
+      9 => "pafumes-img.png",
+      10 => "underwears-img.png",
+      11 => "others-img.png",
+    }
+  end
+
   def create
     mylist = current_user.mylists.build(dress_id: params[:dress_id])
     mylist.save

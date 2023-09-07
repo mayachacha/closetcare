@@ -5,6 +5,7 @@ class DressesController < ApplicationController
 
   def index
     @dresses = Dress.includes(:user).order(created_at: :desc).page(params[:page]).per(30)
+    @mylist = current_user.mylists
     @genres = Genre.all 
     @genre_images = {
       2 => "tops-img.png",
@@ -29,8 +30,10 @@ class DressesController < ApplicationController
     if @dress.save && @dress.images.attached?
      redirect_to root_path
     else
+        puts @dress.errors.full_messages
       render :new, status: :unprocessable_entity
     end
+
   end
 
   def show
