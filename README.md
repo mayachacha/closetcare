@@ -32,7 +32,7 @@ Closet Care
 
 ### 現在の実装内容（主要部のみ）  
 - 一覧ページ
-[![Image from Gyazo](https://gyazo.com/ec1ccec3c3beceaad84b4005c634673d.gif)](https://gyazo.com/ec1ccec3c3beceaad84b4005c634673d)
+[![Image from Gyazo](https://i.gyazo.com/ec1ccec3c3beceaad84b4005c634673d.gif)](https://gyazo.com/ec1ccec3c3beceaad84b4005c634673d)
 - カテゴリ別一覧ページ
 [![Image from Gyazo](https://i.gyazo.com/1074de112ae984cb99aa75f48768181f.gif)](https://gyazo.com/1074de112ae984cb99aa75f48768181f)
 - マイリスト追加・一覧ページ
