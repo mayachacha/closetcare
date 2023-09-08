@@ -30,7 +30,8 @@ label {
 
 .previews{
   display: flex;
-  margin-left: 10%;
+  margin-right: 27%;
+  margin-left: 27%;
   margin-bottom: 5%;
 }
 

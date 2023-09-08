@@ -1,5 +1,5 @@
 class MylistsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:index, :show]
   before_action :set_dress, only: [:create, :destroy]
 
   def index
