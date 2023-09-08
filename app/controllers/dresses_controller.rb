@@ -58,7 +58,7 @@ class DressesController < ApplicationController
 
   private
     def dress_params
-      params.require(:dress).permit(:genre_id, :size_id, :brand, :date, :price, images: []).merge(user_id: current_user.id)
+      params.require(:dress).permit(:genre_id, :size_id, :brand, :date, :price, :memo, images: []).merge(user_id: current_user.id)
     end
 
     def set_dress

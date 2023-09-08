@@ -37,6 +37,10 @@
     <%= f.text_field :price, class: "dress-form", id: "item-price", placeholder: "例 3000" %>円
    </div>
    <div class="dress-form-group">
+  <%= f.label :memo, "メモ (30文字以内)" %><br/>
+  <%= f.text_field :memo, class: "dress-form", maxlength: 30 %>
+</div>
+   <div class="dress-form-group">
     <%= f.submit "収納する", class: "dress-form btn" %>
   </div>
   </div>

@@ -45,6 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_30_082408) do
     t.integer "size_id", null: false
     t.date "date"
     t.integer "price"
+    t.text "memo"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
