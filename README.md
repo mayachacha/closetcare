@@ -11,7 +11,7 @@ Closet Care
 
 ### テスト用アカウント  
 - メールアドレス：aaa@aaa
-- ログインパスワード：aaa111
+- ログインパスワード：aaa111  
 
 ### 利用方法  
 #### 服の保存  
@@ -20,9 +20,9 @@ Closet Care
 
 #### 服を見返す  
 1.一覧ページから服をクリックして服の詳細を確認する。
-2.詳細ページから服の情報編集、削除を行う。
-3.マイリストに追加したい服があれば、一覧ページまたは詳細ページのボタンからマイリストへ追加する。
-4.ヘッダーボタンから、マイリスト一覧を確認する。
+2.詳細ページから服の情報編集、削除を行う。  
+3.マイリストに追加したい服があれば、一覧ページまたは詳細ページのボタンからマイリストへ追加する。  
+4.ヘッダーボタンから、マイリスト一覧を確認する。  
 
 ### アプリケーションを作成した背景  
 近年ネットで気軽に服を買えるようになった分、自分の服の管理が難しくなった。どこで買ったのか、いつ、どのサイズを買ったのか、すべて把握するのは難しい。そこで写真と共に服の情報を記録できるアプリがあれば、買い物中も、電車の中でネットショッピングしている時も、いつでも見返せて便利だと思い、このアプリを開発することにした。
@@ -31,16 +31,21 @@ Closet Care
   (https://docs.google.com/spreadsheets/d/1q8pd3_UsBF_f3HcpR1JlYPxU_rwwvWo6DpdcFyMNL3I/edit#gid=1785908763)
 
 ### 現在の実装内容（主要部のみ）  
+- 一覧ページ
 <a href="https://gyazo.com/ec1ccec3c3beceaad84b4005c634673d"><img src="https://i.gyazo.com/ec1ccec3c3beceaad84b4005c634673d.gif" alt="Image from Gyazo" width="1000"/></a>
+- カテゴリ別一覧ページ
 [![Image from Gyazo](https://i.gyazo.com/1074de112ae984cb99aa75f48768181f.gif)](https://gyazo.com/1074de112ae984cb99aa75f48768181f)
+- マイリスト追加・一覧ページ
 [![Image from Gyazo](https://i.gyazo.com/b478751a139c314b7ea45d437c5c85cd.gif)](https://gyazo.com/b478751a139c314b7ea45d437c5c85cd)
+- 服保存ページ
 [![Image from Gyazo](https://i.gyazo.com/c85b9b3ab7c399269ddffc0847a6b70d.png)](https://gyazo.com/c85b9b3ab7c399269ddffc0847a6b70d)
 [![Image from Gyazo](https://gyazo.com/9c4ae94d69af412f0f74cda0ff274e2a.png)](https://gyazo.com/9c4ae94d69af412f0f74cda0ff274e2a)
-[![Image from Gyazo](https://i.gyazo.com/ef0d9c37f53bd7a01a0c20bec68e84ea.png)](https://gyazo.com/ef0d9c37f53bd7a01a0c20bec68e84ea)
+- 服詳細ページ
+[![Image from Gyazo](https://i.gyazo.com/ef0d9c37f53bd7a01a0c20bec68e84ea.png)](https://gyazo.com/ef0d9c37f53bd7a01a0c20bec68e84ea)  
 
 ### 実装予定の機能  
-1.サブカテゴリーを追加予定。
-2.季節ごとのタグつけ機能を追加予定。
+1.サブカテゴリーを追加予定。  
+2.季節ごとのタグつけ機能を追加予定。  
 
 # データベース設計 
  [![Image from Gyazo](https://i.gyazo.com/dc91def7fc8543689e919ce4f75f884d.png)](https://gyazo.com/dc91def7fc8543689e919ce4f75f884d)
@@ -52,9 +57,10 @@ Closet Care
 | email              | string  | null: false, unique: true |
 | encrypted_password | string  | null: false               |
 
+
 ### Association  
 - has_many :dresses
-- has_many :mylists
+- has_many :mylists  
 
 ### dresses テーブル  
 | Column      | Type       | Options                        |
@@ -69,7 +75,7 @@ Closet Care
 
 ### Association  
 - belongs_to :user
-- has_one :mylist
+- has_one :mylist  
 
 ### mylists テーブル  
 | Column      | Type       | Options                        |
@@ -86,12 +92,13 @@ Closet Care
 ・バックエンド：Ruby/Ruby on Rails
 ・テキストエディタ：Visual Studio Code
 ・デプロイ：AWS
-・タスク管理：GitHub
+・タスク管理：GitHub  
+
 
 ### 工夫したポイント  
 1.フロントエンドに関して  
-服のアプリということで、見た目は洗練されたシンプルなものになるよう、一覧表示のレイアウトやボタンの配置にはこだわって作成。またジャンル別表示、マイリスト追加は非同期を取り入れ、ユーザーのストレス軽減に努めた。
-2.バックエンドに関して
+服のアプリということで、見た目は洗練されたシンプルなものになるよう、一覧表示のレイアウトやボタンの配置にはこだわって作成。またジャンル別表示、マイリスト追加は非同期を取り入れ、ユーザーのストレス軽減に努めた。  
+2.バックエンドに関して  
 自分の服を管理するアプリなので、情報はなるべく自由に保存できるよう、ジャンルとサイズのみnull falseに設定しました。これからサブカテゴリーによって分けて表示もできるよう、実装予定。  
 
 ### 改善点 
