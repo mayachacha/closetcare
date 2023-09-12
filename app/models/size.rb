@@ -1,7 +1,7 @@
 class Size < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
-    { id: 2, name: 'XXS' },
+    { id: 2, name: 'XSS' },
     { id: 3, name: 'XS' },
     { id: 4, name: 'S' },
     { id: 5, name: 'M' },

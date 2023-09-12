@@ -6,7 +6,6 @@ class CreateDresses < ActiveRecord::Migration[7.0]
       t.integer   :size_id      ,null:false
       t.date      :date      
       t.integer   :price   
-      t.text      :memo
       t.references :user        ,null: false, foreign_key: true
       t.timestamps
     end

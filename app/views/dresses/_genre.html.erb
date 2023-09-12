@@ -3,17 +3,17 @@
 <div class="category-content-title">
 FIND BY CATEGORY
 </div>
-
-<ul class="slick">
+<div class="scroll-wrapper">
+<button class="arrow-left hidden">←</button>
+<ul>
   <% Genre.all.each do |genre| %>
-    <% if genre.id != 1 %>
-      <li class="category-list" >
-      <%= link_to genre_path(genre) do %>
-        <%= image_tag @genre_images[genre.id], class:"genre-imgs" %>
-        <%= genre.name %>
-      </li>
-      <% end %> 
-    <% end %>
+  <% if genre.id != 1 %>
+    <li class="category-list" ><%= link_to genre.name, genre_path(genre) %>
+    <%= image_tag @genre_images[genre.id] %></li>
+     <% end %>
   <% end %>
 </ul>
+ <button class="arrow-right">→</button>
+
+</div>
 </div>

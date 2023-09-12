@@ -1,18 +1,15 @@
 <%= render "shared/header" %>
-<%= render "shared/second_header" %>
-
-<%= form_with model: @dress, id: 'new_dress', local: true do |f| %>
+<%= form_with model: @dress, local: true do |f| %>
 <div class="new-body">
-
-        <div class="dress-form-group">
-        <%= f.label :images, "画像(最大3枚)" %><br/>
-        <div class="previews">
-        <div id="previews"></div>
-        </div>
-        <div class="click-upload">
-       <%= f.file_field :images, name: 'dress[images][]', data: {index: 0}, class: "dress-form-img", id:"dress-image" %>
+  <div class="dress-form-group">
+      <div class="click-upload">
+      <%= f.label :images %><br/>
+      <%= f.file_field :images, multiple: true, class:"dress-form", id:"dress-image" %>
       </div>
-      </div>
+    
+    <% if @dress.images.attached? %>
+      <%= image_tag @dress.images, class: 'dress-form' %>
+    <% end %>
 
      <div class="dress-form-group">
     <%= f.label :genre_id, "カテゴリー" %><br/>
@@ -20,7 +17,7 @@
       </div>
       <div class="dress-form-group">
       <%= f.label :brand, "ブランド" %><br/>
-    <%= f.text_field(:brand, class: "dress-form" ) %>
+    <%= f.text_field(:brand, class: "dress-form", placeholder: "ブランド") %>
       </div>
       <div class="dress-form-group">
     <%= f.label :size, "サイズ" %><br/>  
@@ -29,22 +26,18 @@
     <div class="dress-form-group">
     <%= f.label :date, "購入日" %><br/>
     <%= f.date_select(:date,
-      { use_month_numbers: true, start_year: 1930, end_year: Time.now.year, class: "dress-form", prompt: { year: '年', month: '月', day: '日' }}, {class: "dress-form"}
+      { use_month_numbers: true, start_year: 1930, end_year: Time.now.year,class: "dress-form"}, {class: "dress-form"}
     ) %>
     </div>
     <div class="dress-form-group">
     <%= f.label :price, "価格" %><br/>
-    <%= f.text_field :price, class: "dress-form", id: "item-price", placeholder: "例 3000" %>円
+    <%= f.text_field :price, class: "dress-form", id: "item-price", placeholder: "例）3000" %>
    </div>
-   <div class="dress-form-group">
-  <%= f.label :memo, "メモ (30文字以内)" %><br/>
-  <%= f.text_field :memo, class: "dress-form", maxlength: 30 %>
-</div>
    <div class="dress-form-group">
     <%= f.submit "収納する", class: "dress-form btn" %>
   </div>
   </div>
-</div>
+  </div>
 <% end %>
 
 
