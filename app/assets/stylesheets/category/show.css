@@ -1,0 +1,26 @@
+.genre-main{
+  background-color: white;
+  font-family: 'Lora', serif;
+}
+
+.genre-name{
+  text-align: center;
+  font-size: 50px;
+}
+
+.genre-lists{
+  list-style: none;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-decoration: none;
+}
+
+.genre-list{
+  width: 37vh;
+  height: 50vh;
+  padding: 1vw;
+  margin: 10px;
+}
+
