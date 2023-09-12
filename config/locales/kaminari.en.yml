@@ -1,0 +1,7 @@
+en:
+  views:
+    pagination:
+      next: "次へ▶︎"
+      previous: "◀︎前へ"
+      first: "最初のページへ"
+      last: "最後のページへ"

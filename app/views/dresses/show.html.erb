@@ -1,10 +1,18 @@
 <%= render "shared/header" %>
+<%= render "shared/second_header" %>
 
+<%# <%= turbo_frame_tag dom_id(@dress) do %>
 <div class="dress-show">
   <div class="dress-box">
     <div class="dress-img-content">
-      <%= image_tag @dress.images.first, class:"dress-box-img" %>
+        <div class="dress-show-images">
+          <% @dress.images[0..-1].each do |image| %>
+              <%= image_tag image, class:"dress-show-image" %>
+          <% end %>
+        </div>
     </div>
+  </div>
+
         <%= link_to "edit", edit_dress_path(@dress.id), method: :get, class: "dress-show-btn" %>
         <p class="or-text">or</p>
         <%= link_to "delete", dress_path(@dress.id), data: { turbo_method: :delete }, class:"dress-show-btn" %>
@@ -32,19 +40,21 @@
           <th class="detail-item">price</th>
           <td class="detail-value">￥<%= @dress.price %></td>
         </tr>
+         <tr>
+          <th class="detail-item">memo</th>
+          <td class="detail-value"><%= @dress.memo %></td>
+        </tr>
+
       </tbody>
     </table>
     
-    <div class="option">
-      <div class="favorite-btn">
-        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
+  <div class="option">
+    <div class="mylist-button">
+      <div id="mylist-btn<%= @dress.id %>">
+          <%= render partial: "mylists/mylist", locals: { dress: @dress } %>
       </div>
-      <div class="report-btn">
-        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>ゴミ箱</span>
-      </div>
-  </div>
+    </div>
 </div>
+<%# <% end %>
 
 <%= render "shared/footer" %>

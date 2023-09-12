@@ -1,19 +1,23 @@
+  <%= render "shared/header"%>
+  
   <div class="container">
-    <h2>Log in</h2>
+    <h2>ログインページ</h2>
     <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
+        <%= f.label :email, class: "hidden-label" %><br />
+        <%= f.email_field :email, class: "input-default", placeholder: "Email", autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.label :password, class: "hidden-label" %><br />
+        <%= f.password_field :password, class: "input-default", placeholder: "Password", autocomplete: "off" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Log in" %>
+        <%= f.submit "Log in", class: "action-button" %> 
       </div>
     <% end %>
   </div>
 </div>
+
+<%= render "shared/footer"%>

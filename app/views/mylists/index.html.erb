@@ -1,0 +1,43 @@
+<%= render "shared/header" %>
+<%= render "shared/second_header" %>
+
+<div class="main">
+
+  <div class="all"> Mylist
+  <span class ="dress-count" ><%= @mylists.count %>  items </span> 
+  </div>
+  
+  <div class="pagination">
+  <%= paginate @mylists %>
+  </div>
+
+  <ul class="dress-lists">
+    <% @mylists.each do |mylist| %>
+    <li class="list">
+      <%= link_to dress_path(mylist.dress.id), class: "no-decoration" do %>
+      <div class="dress-img">
+        <% if mylist.dress.images.attached? %>
+        <%= image_tag mylist.dress.images[0], class: "dress-img" %> 
+        <% end %>
+       </div>
+      <% end %>
+
+    <%= link_to genre_path(mylist.dress.genre), class: "no-decoration" do %>
+      <div class='dress-info-group'>
+        <div class='dress-info'><%= mylist.dress.genre.name %></div>
+        <div class='dress-info'><%= mylist.dress.size.name %></div>
+    <% end %>
+        <div class="mylist-button">
+         <div id="mylist-btn<%= mylist.dress.id %>">
+           <%= render partial: "mylists/mylist", locals: { dress: mylist.dress } %>
+         </div>
+       </div>
+      </div>
+  
+    </li>
+    <% end %>
+ </ul>
+ </div>
+ 
+ <%= render "dresses/genre"%>
+<%= render "shared/footer" %>
