@@ -1,9 +1,0 @@
-#previews {
-  display: flex;justify-content: left;
-}
-
-.image-input-container {
-  width: calc(50% - 10px);
-  margin-right: 10px;
-  margin-bottom: 10px;
-}

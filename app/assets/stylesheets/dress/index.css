@@ -1,7 +1,10 @@
+body{
+  margin:0;
+}
+
 .main{
   background-color: white;
   font-family: 'Lora', serif;
-  width: 100%; 
 }
 
 .all{
@@ -9,97 +12,51 @@
   font-size: 50px;
 }
 
-.dress-count{
-  font-size: 35px;
-}
-
 .dress-lists{
   list-style: none;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
   text-decoration: none;
-  margin: 100px 100px 100px 0 ;
 }
 
 .list{
-  width: 20%;
+  width: 37vh;
   height: 50vh;
-  margin-bottom: 10px;
+  padding: 1vw;
+  margin: 10px;
 }
 
-.dress-lists .dress-img {
-  width: 80%;
-  height: 300px;
-  text-align: center;
-  margin-bottom: 25px;
+.dress-img {
+  width: 100%;
+  height: 80%; /* 親要素の80%の高さに指定 */
+  display: flex;
+  align-items: center; /* 画像を縦方向に中央寄せ */
+  justify-content: center; /* 画像を横方向に中央寄せ */
 }
 
 .dress-img img {
   max-height: 100%;
   max-width: 100%;
-  margin-left: 30px;
-}
-
-.dress-img:hover {
-  transform: scale(1.1); /* 1.1倍に拡大することで飛び出すように見せる */
-  transition: transform 0.3s ease; /* エフェクトの変化をスムーズにする */
 }
 
 .dress-info-group{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  width: 75%;
-  margin: 15px;
-  padding-left: 30px;
 }
 
 .dress-info{
   align-items: center;
-  margin-right: 8px;
+  margin: 5px;
 }
 
 .no-decoration{
   text-decoration: none;
   font: black;
-  display: flex;
-  
 }
 
 .dress-info:hover{
   opacity: 0.5;
-}
-
-/* ページネーション関連 */
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 50px;
-  color: black;
-  font-size: 20px;
-  margin: auto;
-  margin-top: 20px;
-}
-
-.pagination-list {
-  display: flex;
-  align-items: center; 
-}
-
-.pagination-next {
-  text-decoration: none;
-  order: 2; /* 順序を調整 */
-  margin-left: 10px; 
-}
-
-.pagination-previous {
-  text-decoration: none;
-}
-
-.pagination-link {
-  padding: 25px;
 }

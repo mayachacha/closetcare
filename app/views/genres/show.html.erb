@@ -1,36 +1,25 @@
 <%= render "shared/header" %>
-<%= render "shared/second_header" %>
 
-<%= turbo_frame_tag "genre_#{params[:id]}" do %>
-<div class="main">
+<div class="genre-main">
   <div class="genre-name"> <%= @genre.name %> </div>
 
-  <ul class="dress-lists">
+  <ul class="genre-lists">
     <% @dresses.each do |dress| %>
-    <li class="list">
+    <li class="genre-list">
       <%= link_to dress_path(dress.id), class: "no-decoration" do %>
       <div class="dress-img">
         <% if dress.images.attached? %>
-        <%= image_tag dress.images[0], class: "dress-img" %> 
+        <%= image_tag dress.images.first, class: "dress-img" %> 
         <% end %>
       </div>
-      <% end %>
-
-    <%= link_to genre_path(dress.genre), class: "no-decoration" do %>
       <div class='dress-info-group'>
         <div class='dress-info'><%= dress.genre.name %></div>
         <div class='dress-info'><%= dress.size.name %></div>
+      </div>
       <% end %>
-        <div class="mylist-button">
-        <div id="mylist-btn<%= dress.id %>">
-            <%= render partial: "mylists/mylist", locals: { dress: dress } %>
-        </div>
-        </div>
-      </div> 
     </li>
     <% end %>
  </ul>
 </div>
-   <% end %>
 
 <%= render "shared/footer" %>
