@@ -1,17 +1,48 @@
 .new-body{
   background-color: white;
   padding-top: 50px;
+  width: 100%;
 }
 
 .dress-form-group{
   text-align: center;
-  display: block;
   padding: 30px;
 }
 
+.click-upload{
+  text-align: center;
+}
+
 label {
-  text-align: left;
+  text-align: center;
   font: 50px;
+}
+
+.dress-form-img{
+  border: none;
+  border-bottom: 1px solid gray;
+  color: #666;
+  font-size: 13px;
+  transition: border-color 0.3s;
+  width: 350px;
+  text-align: center;
+  }
+
+.previews{
+  display: flex;
+  margin-right: 27%;
+  margin-left: 27%;
+  margin-bottom: 5%;
+}
+
+.preview-image{
+  text-align: center;
+  height: 400px;
+  width: 325px;  
+}
+
+.preview{
+  margin: 20px ;
 }
 
 .dress-form{
@@ -22,6 +53,7 @@ label {
   height: 50px;
   transition: border-color 0.3s;
   width: 55%;
+  text-align: center;
   }
 
 .dress-form:focus{
@@ -42,5 +74,5 @@ label {
   text-align: center;
   text-transform: uppercase;
   transition: background 0.3s ease-in-out;
-  width: 60%;
+  width: 35%;
 }
