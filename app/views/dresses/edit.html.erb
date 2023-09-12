@@ -1,0 +1,46 @@
+<%= render "shared/header" %>
+<%= render "shared/second_header" %>
+
+<%= form_with model: @dress, id: 'new_dress', local: true do |f| %>
+<div class="new-body">
+      <div class="dress-form-group">
+
+        <%= f.label :images, "画像(最大3枚)" %><br/>
+         <div class="previews">
+         <div id="previews"></div>
+          </div>
+          <div class="click-upload">
+       <%= f.file_field :images, name: 'dress[images][]', data: {index: 0}, class: "dress-form-img", id:"dress-image" %>
+      </div>
+      </div>
+
+     <div class="dress-form-group">
+    <%= f.label :genre_id, "カテゴリー" %><br/>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class: "dress-form"}) %>
+      </div>
+      <div class="dress-form-group">
+      <%= f.label :brand, "ブランド" %><br/>
+    <%= f.text_field(:brand, class: "dress-form" ) %>
+      </div>
+      <div class="dress-form-group">
+    <%= f.label :size, "サイズ" %><br/>  
+    <%= f.collection_select(:size_id, Size.all, :id, :name, {}, {class: "dress-form"}) %>
+    </div>
+    <div class="dress-form-group">
+    <%= f.label :date, "購入日" %><br/>
+    <%= f.date_select(:date,
+      { use_month_numbers: true, start_year: 1930, end_year: Time.now.year,class: "dress-form"}, {class: "dress-form"}
+    ) %>
+    </div>
+    <div class="dress-form-group">
+    <%= f.label :price, "価格" %><br/>
+    <%= f.text_field :price, class: "dress-form", id: "item-price", placeholder: "例）3000" %>円
+   </div>
+   <div class="dress-form-group">
+    <%= f.submit "収納する", class: "dress-form btn" %>
+  </div>
+  </div>
+</div>
+<% end %>
+
+<%= render "shared/footer" %>

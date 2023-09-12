@@ -9,7 +9,7 @@ class Genre < ActiveHash::Base
     { id: 7, name: 'BAGS' },
     { id: 8, name: 'ACCESSORIES' },
     { id: 9, name: 'PAFUMES' },
-    { id: 10, name: 'UNDERWARES' },
+    { id: 10, name: 'UNDERWEARS' },
     { id: 11, name: 'OTHERS' }
   ]
 

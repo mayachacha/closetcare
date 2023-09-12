@@ -1,58 +1,35 @@
 .by-category{
   background-color: #fff4ea;
-  padding: 20px;
   font-family: 'Lora', serif;
   height: 65vh;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 .category-content-title{
   font-size: 55px;
   text-align: center;
   margin-bottom: 10px;
-  margin: 40px;
+  padding: 40px;
 }
 
-.scroll-wrapper{
+.slick{
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  max-width: 80%;
+  margin: auto;
 }
 
-button{
-  border: none;
-  width: 50px;
-  height: 50px;
-  background-color: transparent;
+.slick li{
+  height: auto;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
-button:hover{
-  opacity: 0.5;
-}
-
-.arrow-left {
-  margin-right: 10px;
-}
-
-.arrow-right {
-  margin-left: 10px;
-}
-
-.by-category ul {
-  display: flex;
-  align-items: center;
-  padding: 0; /* デフォルトのリストスタイルを削除 */
-  }
-
-.by-category li{
-  text-align: center;
-  margin: 0 10px; /* 画像同士の間隔を調整 */
-}
-
-img{
-  width: 300px;
-  height: 350px;
+.genre-imgs{
+  width: 120%;
+  height: 320px;
+  object-fit: cover;
 }
 
 img:hover{
@@ -66,5 +43,32 @@ li a{
 }
 
 li a:hover {
-opacity:0.5 ;
+  opacity:0.5 ;
+}
+
+.slick slick-initialized slick-slider{
+  display: flex;
+}
+
+/* 矢印のスタイル */
+.slick-prev, .slick-next {
+  font-size: 24px;
+  color: #000;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%; /* 画像の上下中央に配置 */
+  transform: translateY(-50%);
+}
+
+/* 左矢印の位置調整 */
+.slick-prev {
+  left: -100px;
+}
+
+/* 右矢印の位置調整 */
+.slick-next {
+  right: -100px;
 }

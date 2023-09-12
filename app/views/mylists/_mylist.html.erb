@@ -1,0 +1,11 @@
+<%= turbo_frame_tag dom_id(dress, :mylist) do %>
+  <% if user_signed_in? && dress.mylist.present? && dress.mylist.dress_id == dress.id %>
+    <%= link_to dress_mylist_path(dress.mylist, dress_id: dress.id), data: { turbo_method: :delete }, class: "dress_mylists" do %>
+      <%= image_tag("black-heart.png", class: "heart-img") %>
+    <% end %>
+  <% else %>
+    <%= link_to dress_mylists_path(dress.id), data: { turbo_method: :post }, class: "dress_mylists" do %>
+      <%= image_tag("heart.png", class: "heart-img") %>
+    <% end %>
+  <% end %>
+<% end %>
